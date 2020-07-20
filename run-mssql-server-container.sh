@@ -22,4 +22,9 @@ docker run \
 docker logs mssql_server
 
 echo ""
-echo "🎉 Access the server @ localhost:1433, pass: $MSSQL_PASSWORD"
+echo "🎉 Access the server @ localhost:1433, user: SA, pass: $MSSQL_PASSWORD"
+
+# WARNING: The first time the script runs, it creates a Docker volume
+#   called `sqlvolume`. After it is created, the password you chose the first
+#   time is the password going forward, unless you remove the volume (which
+#   destroys all data) by running `docker volume rm sqlvolume`
