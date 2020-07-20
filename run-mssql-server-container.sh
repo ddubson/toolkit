@@ -3,12 +3,9 @@
 set +e
 
 MSSQL_PASSWORD=$1
-PERSIST_HOST_DIR=~/mssql-docker-data
 MSSQL_DOCKER_IMAGE=mcr.microsoft.com/mssql/server:2019-CU5-ubuntu-18.04
 
 docker pull $MSSQL_DOCKER_IMAGE
-
-mkdir -p $PERSIST_HOST_DIR
 
 docker stop mssql_server || true
 docker rm mssql_server || true
