@@ -15,7 +15,7 @@ pushd "$current_git_repo" > /dev/null || exit
   fi
 
   git add .
-  git commit -m "WIP: Switching drivers"
+  git commit -m "WIP: $(whoami) completes their turn at $(date -u +'%Y-%m-%d %H:%M:%SZ'). Switching drivers"
 
   echo "Pushing to git remote!"
   git push -u origin head
