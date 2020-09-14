@@ -18,7 +18,7 @@ pushd "$current_git_repo" > /dev/null || exit
   git commit -m "WIP: Switching drivers"
 
   echo "Pushing to git remote!"
-  git push -u origin head 2&> /dev/null
+  git push -u origin head
   echo "git fetch --prune && git checkout $current_branch && git pull origin $current_branch --rebase" | pbcopy
   popd > /dev/null || exit
 popd > /dev/null || exit
