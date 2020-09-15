@@ -4,6 +4,11 @@
 
 current_git_repo=$(pwd)
 
+if [[ ! -d .git ]]; then
+  echo "Stopping. Current directory is not a git repository."
+  exit 1
+fi
+
 pushd "$current_git_repo" > /dev/null || exit
   pushd "$(git rev-parse --show-toplevel)" > /dev/null || exit
   current_branch=$(git rev-parse --abbrev-ref HEAD)
