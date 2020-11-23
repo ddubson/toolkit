@@ -7,6 +7,9 @@
 OS_TYPE 			   	:=unix
 MY_ENV_VAR				:="SomeValue"
 
+.PHONY = help
+.DEFAULT_GOAL = help
+
 # Check if OS is Windows
 ifeq ($(OS),Windows_NT)
     OS_TYPE = windows
@@ -29,28 +32,32 @@ define env_var_check
 	@: $(if $(value $1),,$(error $1 is not set. The task cannot continue))
 endef
 
-all-env-var-check:
+all-env-var-check: ## Ensure all required environment variables are present
 	$(call env_var_check,MY_ENV_VAR)
 	@echo "Ensure env vars are set in the environment"
 
-prereqs:
+prereqs: ## Ensure the right programs are installed to satisfy this project
 	$(call ensure_program_exists,echo)
 	@echo "Ensure the right programs for the project are available"
 
-install-deps: prereqs
+install-deps: prereqs ## Install the dependencies for this project
 	@echo "Install dependencies locally needed to run the project"
 
-start: all-env-var-check
+start: all-env-var-check ## Start project locally
 	@echo "Start process locally"
 
-format:
+format: ## Format the source of this project
 	@echo "Run a linter or formatter here"
 
-test:
+test: ## Run all test cases
 	@echo "Run all test cases"
 
-stop:
+stop: ## Stop the project running locally
 	@echo "Stop process(es) gracefully (SIGTERM > SIGKILL ideally)"
 
-ship-it: install-deps format test
+ship-it: install-deps format test ## Ensure project is ready to push to git remote
 	@echo "Ready to ship!"
+
+help: ## Describe all make tasks (default task)
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
