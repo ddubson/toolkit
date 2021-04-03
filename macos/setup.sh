@@ -10,7 +10,8 @@ brew install \
     haskell-stack \
     git \
     nodejs \
-    shellcheck
+    shellcheck \
+    tmux
 
 brew cask install \
     google-chrome \
