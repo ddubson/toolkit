@@ -6,7 +6,7 @@ Execute in terminal:
 
 ```bash
 # To install globally at user level
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ddubson/.scripts/main/gitsave/gitsave.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ddubson/.scripts/main/gitsave/install-gitsave.sh)"
 ```
 
 ## Usage
