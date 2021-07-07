@@ -24,7 +24,8 @@ brew cask install \
     adoptopenjdk11 \
     telegram-desktop \
     spotify \
-    drawio
+    drawio \
+    skim
 
 npm i -g yarn
 
