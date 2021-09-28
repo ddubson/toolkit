@@ -11,7 +11,8 @@ brew install \
     git \
     nodejs \
     shellcheck \
-    tmux
+    tmux \
+    fzf
 
 brew cask install \
     google-chrome \
