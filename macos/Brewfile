@@ -1,0 +1,23 @@
+tap "AdoptOpenJDK/openjdk"
+
+brew httpie
+brew gcc
+brew vim
+brew haskell-stack
+brew git
+brew nodejs
+brew shellcheck
+brew tmux
+brew fzf
+brew google-chrome
+brew iterm2
+brew jetbrains-toolbox
+brew shiftit
+brew nordvpn
+brew caffeine
+brew atom
+brew adoptopenjdk11
+brew telegram-desktop
+brew spotify
+brew drawio
+brew skim

@@ -2,31 +2,7 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew tap AdoptOpenJDK/openjdk
-
-brew install \
-    gcc \
-    vim \
-    haskell-stack \
-    git \
-    nodejs \
-    shellcheck \
-    tmux \
-    fzf
-
-brew cask install \
-    google-chrome \
-    iterm2 \
-    jetbrains-toolbox \
-    shiftit \
-    nordvpn \
-    caffeine \
-    atom \
-    adoptopenjdk11 \
-    telegram-desktop \
-    spotify \
-    drawio \
-    skim
+brew bundle
 
 npm i -g yarn
 
