@@ -82,4 +82,20 @@ setup_colors
 
 # script logic here
 
-msg "Hello!"
+function performLogin() {
+    msg "SAS Login will be performed here."
+}
+
+function fetchAuthorizationCode() {
+    msg "Fetching of a temporary authorization code will be performed here."
+}
+
+function retrieveAccessTokenUsingAuthorizationCode() {
+  local authCode=$1
+  msg "Fetching of access token using valid authorization code will be performed here."
+}
+
+performLogin
+fetchAuthorizationCode
+retrieveAccessTokenUsingAuthorizationCode "valid-auth-code-here"
+
